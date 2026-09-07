@@ -101,6 +101,8 @@ function Header() {
           <span className="user-arrow">⌄</span>
         </div>
       </div>
+
+      <span className="environment-badge">DESARROLLO</span>
     </header>
   )
 }
