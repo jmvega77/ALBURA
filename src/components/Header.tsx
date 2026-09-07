@@ -21,7 +21,16 @@ function getWeatherIcon(code: number) {
 }
 
 function Header() {
+  const [currentTime, setCurrentTime] = useState(() => new Date())
   const [weather, setWeather] = useState<WeatherData | null>(null)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setCurrentTime(new Date())
+    }, 1000)
+
+    return () => window.clearInterval(timer)
+  }, [])
 
   useEffect(() => {
     if (!navigator.geolocation) return
@@ -55,6 +64,11 @@ function Header() {
     )
   }, [])
 
+  const formattedTime = currentTime.toLocaleTimeString('es-ES', {
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+
   return (
     <header className="main-header">
       <div className="albura-brand">
@@ -75,7 +89,7 @@ function Header() {
         </button>
 
         <div className="current-time">
-          07:32
+          {formattedTime}
         </div>
 
         {weather && (
