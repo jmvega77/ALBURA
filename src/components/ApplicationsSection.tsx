@@ -1,4 +1,8 @@
-function ApplicationsSection() {
+type ApplicationsSectionProps = {
+  onPersonal: () => void
+}
+
+function ApplicationsSection({ onPersonal }: ApplicationsSectionProps) {
   return (
     <section className="apps-section">
       <div className="section-heading">
@@ -14,7 +18,7 @@ function ApplicationsSection() {
       </div>
 
       <div className="apps-grid">
-        <button className="app-card">
+        <button className="app-card" onClick={onPersonal}>
           <div className="app-card-top">
             <div className="app-icon blue-icon">●</div>
             <span className="app-arrow">→</span>
