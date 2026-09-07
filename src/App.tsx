@@ -20,7 +20,7 @@ function App() {
       <main className="main-content">
         <WelcomeSection />
 
-        <AttentionSection />
+        <AttentionSection onPersonal={() => setActiveView('personal')} />
 
         <ApplicationsSection onPersonal={() => setActiveView('personal')} />
       </main>
