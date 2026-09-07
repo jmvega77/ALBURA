@@ -21,7 +21,7 @@ function Personal({ onBack }: PersonalProps) {
 
       <main className="personal-content">
         <nav className="personal-nav" aria-label="Secciones de Personal">
-          <button className="personal-nav-item active">Personas</button>
+          <button className="personal-nav-item active">Personal</button>
           <button className="personal-nav-item">Jornada</button>
           <button className="personal-nav-item">Vacaciones</button>
           <button className="personal-nav-item">Horas extra</button>
