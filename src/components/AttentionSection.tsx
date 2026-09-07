@@ -1,4 +1,8 @@
-function AttentionSection() {
+type AttentionSectionProps = {
+  onPersonal: () => void
+}
+
+function AttentionSection({ onPersonal }: AttentionSectionProps) {
   return (
     <section className="attention-section">
       <div className="section-heading">
@@ -39,7 +43,7 @@ function AttentionSection() {
             <span>Personal</span>
           </div>
 
-          <button className="card-action">
+          <button className="card-action" onClick={onPersonal}>
             Ir a Personal
             <span>→</span>
           </button>
