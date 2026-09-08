@@ -2,6 +2,9 @@ type ApplicationsSectionProps = {
   onPersonal: () => void
 }
 
+// Catálogo de aplicaciones accesibles desde el panel principal de ALBURA.
+// Por ahora las aplicaciones se presentan como accesos visuales y solo
+// Personal tiene navegación activa.
 function ApplicationsSection({ onPersonal }: ApplicationsSectionProps) {
   return (
     <section className="apps-section">
