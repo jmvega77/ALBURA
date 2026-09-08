@@ -4,6 +4,9 @@ type PersonalProps = {
   onBack: () => void
 }
 
+// Pantalla principal de la aplicación Personal.
+// Actualmente presenta la estructura inicial y sus secciones de trabajo;
+// la gestión de datos se incorporará sobre esta base.
 function Personal({ onBack }: PersonalProps) {
   return (
     <div className="personal-app">
