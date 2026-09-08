@@ -1,3 +1,5 @@
+// Cabecera de bienvenida de la pantalla principal.
+// Su contenido es puramente de presentación y no contiene lógica de negocio.
 function WelcomeSection() {
   return (
     <section className="welcome-section">
