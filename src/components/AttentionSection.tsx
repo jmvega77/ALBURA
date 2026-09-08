@@ -2,6 +2,9 @@ type AttentionSectionProps = {
   onPersonal: () => void
 }
 
+// Panel de asuntos que requieren atención desde la pantalla principal.
+// Actualmente contiene datos de demostración; posteriormente estos datos
+// procederán de las aplicaciones correspondientes.
 function AttentionSection({ onPersonal }: AttentionSectionProps) {
   return (
     <section className="attention-section">
