@@ -5,6 +5,8 @@ type WeatherData = {
   weatherCode: number
 }
 
+// Traduce los códigos meteorológicos de Open-Meteo a iconos sencillos
+// para mostrar el estado actual en la cabecera de ALBURA.
 function getWeatherIcon(code: number) {
   if (code === 0) return '☀️'
   if (code === 1 || code === 2) return '🌤️'
@@ -21,6 +23,7 @@ function getWeatherIcon(code: number) {
 }
 
 function Header() {
+  // La hora se obtiene del equipo del usuario y se actualiza cada segundo.
   const [currentTime, setCurrentTime] = useState(() => new Date())
   const [weather, setWeather] = useState<WeatherData | null>(null)
 
@@ -32,6 +35,9 @@ function Header() {
     return () => window.clearInterval(timer)
   }, [])
 
+  // El tiempo se obtiene de Open-Meteo usando la ubicación autorizada
+  // por el usuario. Si no hay ubicación o falla el servicio, la cabecera
+  // continúa funcionando sin mostrar los datos meteorológicos.
   useEffect(() => {
     if (!navigator.geolocation) return
 
@@ -116,6 +122,7 @@ function Header() {
         </div>
       </div>
 
+      {/* Indicador temporal para distinguir claramente la rama de desarrollo. */}
       <span className="environment-badge">DESARROLLO</span>
     </header>
   )
